@@ -1,0 +1,135 @@
+@charset "windows-1251";
+/* CSS Document */
+
+
+.category_content
+{
+	width:100%;
+	height:auto;
+	display:block;
+	display:inline-table;
+	margin-top:2px;
+	font-family:"MyriadPro", arial;
+		background-color:#FFF;;
+		z-index:9999;
+
+	overflow-y:visible
+}
+	.category_content_title
+	{
+		height:25px;
+		display:block;
+		background-color:#666066;
+		background-image:url(../images/icons/icon-list.png);
+		background-repeat:no-repeat;
+		background-position:20px; 
+		padding-left:50px;
+		padding-top:5px;
+		color:#f3f3f3;
+		font-size:14px;
+		overflow-y:visible;
+	}
+		.category_content_title .add_button
+		{
+			width:16px;
+			height:16px;
+			display:block;
+			float:right;
+			margin-right:20px;
+			background-image:url(../images/icons/icon-add-category_2.png);
+			background-repeat:no-repeat;
+			margin-top:2px;
+		}
+		.category_content_title .category_content_status
+		{
+			width:16px;
+			height:16px;
+			display:block;
+			background-repeat:no-repeat;
+			background-position:top;
+			background-image:url(../images/icons/icon-stat-category.png);
+			margin-top:2px;
+			float:right;
+			margin-right:10px;
+			cursor:pointer;
+		}
+		
+	.category_content_in
+	{
+		display:table;
+		display:inline-table;
+		display:none;
+	}
+		.list_folder
+		{
+			height:30px;
+			display:table;
+			display:inline-table;
+		}
+			.list_folder .folder_icon
+			{
+				width:16px;
+				height:16px;
+				display:block;
+				float:left;
+				cursor:pointer;
+			}
+			.list_folder li
+			{
+				display:table;
+				padding-left:18px;
+				background-image:url(../images/category_list/empty.png);
+				background-repeat:no-repeat;
+				background-position:0px 4px;
+				margin-top:5px;
+				margin-bottom:5px;
+				overflow-y:visible
+			}
+				.list_folder_titul
+				{
+					max-height:16px;
+					display:block;
+					float:left;
+					background-image:url(../images/category_list/empty.png);
+					background-repeat:no-repeat;
+					background-position:left;
+					padding-left:20px;
+					color:#666066;
+					font-size:13px;
+					font-weight:bold;
+					overflow-x:visible;
+					display:inline-table;
+				}
+				.list_folder_end
+				{
+					height:16px;
+					display:table;
+					color:#0083be;
+					font-size:13px;
+					font-weight:bold;
+					overflow-y:auto;
+				}
+				a:hover .list_folder_end
+				{
+					color:#39afe4;
+				}
+				.list_folder .n_icon
+				{
+					width:16px;
+					height:16px;
+					display:block;
+					float:left;
+					margin-right:14px;
+				}
+				.list_folder_ul
+				{
+					display:table;
+					background-image:url(../images/category_list/bg.png);
+					background-repeat:repeat-y;
+					background-position:8px;
+					padding-left:5px;
+					clear:both;					
+					padding-top:10px;
+					display:none;
+					overflow-y:visible
+				}

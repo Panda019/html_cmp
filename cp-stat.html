@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>web_temp_cmp-cp-stat</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/jqtransform.css" media="all"/>
+    <link rel="stylesheet" media="all" type="text/css" href="css/jquery-ui.css"/>
+    <link rel="stylesheet" media="all" type="text/css" href="css/jquery-ui-timepicker-addon.css"/>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/jquery.jqtransform.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-sliderAccess.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('form').jqTransform({imgPath: 'images/interface/'});
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('.example-container').each(function(i) {
+                eval($(this).text());
+            });
+        });
+    </script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script>
+        (function($) {
+            $(window).load(function() {
+                $("#content_1").mCustomScrollbar({
+                    scrollButtons: {
+                        enable: true
+                    }
+                });
+                $("#content_1").hover(function() {
+                    $(document).data({"keyboard-input": "enabled"});
+                    $(this).addClass("keyboard-input");
+                }, function() {
+                    $(document).data({"keyboard-input": "disabled"});
+                    $(this).removeClass("keyboard-input");
+                });
+                $(document).keydown(function(e) {
+                    if ($(this).data("keyboard-input") === "enabled") {
+                        var activeElem = $(".keyboard-input"),
+                                activeElemPos = Math.abs($(".keyboard-input .mCSB_container").position().top),
+                                pixelsToScroll = 60;
+                        if (e.which === 38) { //scroll up
+                            e.preventDefault();
+                            if (pixelsToScroll > activeElemPos) {
+                                activeElem.mCustomScrollbar("scrollTo", "top");
+                            } else {
+                                activeElem.mCustomScrollbar("scrollTo", (activeElemPos - pixelsToScroll), {scrollInertia: 400, scrollEasing: "easeOutCirc"});
+                            }
+                        } else if (e.which === 40) { //scroll down
+                            e.preventDefault();
+                            activeElem.mCustomScrollbar("scrollTo", (activeElemPos + pixelsToScroll), {scrollInertia: 400, scrollEasing: "easeOutCirc"});
+                        }
+                    }
+                });
+            });
+        })(jQuery);
+    </script>
+    <script>
+        (function($) {
+            $(window).load(function() {
+                $("#content_2").mCustomScrollbar({
+                    scrollButtons: {
+                        enable: true
+                    }
+                });
+                $("#content_2").hover(function() {
+                    $(document).data({"keyboard-input": "enabled"});
+                    $(this).addClass("keyboard-input");
+                }, function() {
+                    $(document).data({"keyboard-input": "disabled"});
+                    $(this).removeClass("keyboard-input");
+                });
+                $(document).keydown(function(e) {
+                    if ($(this).data("keyboard-input") === "enabled") {
+                        var activeElem = $(".keyboard-input"),
+                                activeElemPos = Math.abs($(".keyboard-input .mCSB_container").position().top),
+                                pixelsToScroll = 60;
+                        if (e.which === 38) { //scroll up
+                            e.preventDefault();
+                            if (pixelsToScroll > activeElemPos) {
+                                activeElem.mCustomScrollbar("scrollTo", "top");
+                            } else {
+                                activeElem.mCustomScrollbar("scrollTo", (activeElemPos - pixelsToScroll), {scrollInertia: 400, scrollEasing: "easeOutCirc"});
+                            }
+                        } else if (e.which === 40) { //scroll down
+                            e.preventDefault();
+                            activeElem.mCustomScrollbar("scrollTo", (activeElemPos + pixelsToScroll), {scrollInertia: 400, scrollEasing: "easeOutCirc"});
+                        }
+                    }
+                });
+            });
+        })(jQuery);
+    </script>
+    <link type="text/css" rel="stylesheet" href="css/gr_table_style.css" />
+    <script type="text/javascript">
+        $(window).load(function() {
+            $(".gr_arrow").click(function()
+            {
+                var obj = $(this).parent().parent().parent().parent().find('.gr_table_content');
+                if (obj.css('display') == 'none')
+                {
+                    obj.slideDown(400);
+                    $(this).css('background-position', 'bottom');
+                }
+                else
+                {
+                    obj.slideUp(400);
+                    $(this).css('background-position', 'top');
+                }
+                setTimeout('$("#content_2").mCustomScrollbar("update")', 450);
+            });
+        });
+
+    </script>
+</head>
+<body>
+    <div class="l-page__wrapper">
+        <div class="l-page-wrap">
+            <div class="l-header__wrap">
+                <div class="b-sidebar_top">
+                    <div class="b-nav-system_top">
+                        <ul class="list">
+                            <li class="item"><a href="#" title="Content Operators">Content Operators</a></li>
+                            <li class="item"><a href="#" title="Categories">Copyrighters</a></li>
+                            <li class="item"><a href="#" title="Categories">Categories</a></li>
+                            <li class="item"><span class="active" title="Statistics">Statistics</span></li>
+                            <li class="item"><a href="#" title="History">History</a></li>
+                        </ul>
+                    </div>
+                    <div class="l-input_logout_header"><a href="#" class="b-input-logout" title="Logout">Logout</a></div>
+                    <div class="b-divider__sidebar_top"></div>
+                    <div class="b-choice_lang">
+                        <div class="b-sort_tools">
+                            <ul class="list">
+                                <li><a class="fly" href="#" tabindex="1" title="Choice language">RUS</a>
+                                    <ul class="dropdown d2">
+                                        <li class="lang"><a href="#">ENG</a></li>
+                                        <li class="lang"><a href="#">UZB</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="b-divider__sidebar_top"></div>
+                    <div class="b-sort_user-status">
+                        <ul class="list">
+                            <li title="Select options"><a class="fly" href="#" tabindex="1">
+                                    <div class="default">Name Surname</div>
+                                </a>
+                                <ul class="dropdown d2">
+                                    <li class="lang"><a href="#">Administrator</a></li>
+                                    <li class="lang"><a href="#">Change Password</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="b-system-time">System Time: 13-01-2013 14:23:01</div>
+                </div>
+                <div class="clear"></div>
+                <div class="b-header__index">
+                    <div class="b-name_service">
+                        <div class="index">Content Management</div>
+                        <div class="b-type_service">Platform</div>
+                    </div>
+                    <div class="b-page-title">Content Management</div>
+                </div>
+            </div>
+            <div class="l-content-wrap">
+                <div class="b-content i-width_1200">
+                    <div class="b-content_1col">
+                        <div class="b-page-header">STATISTICS</div>
+                        <div class="b-divider_content"></div>
+                        <form>
+                            <div class="b-form-wrap">
+                                <div class="b-content__index">
+                                    <div class="b-row-filter-panel">
+                                        <div class="b-info-panel__item">
+                                            <label class="b-label_default">SEARCH</label>
+                                            <div class="clear"></div>
+                                            <input class="b-input_text i-width__search-content-operator" type="text" placeholder="Keyword"/>
+                                        </div>
+                                        <div class="b-info-panel__item">
+                                            <label class="b-label_default">CONTENT TYPE</label>
+                                            <div class="clear"></div>
+                                            <select name="select1">
+                                                <option value="#">All types</option>
+                                                <option value="#">Lorem ipsum</option>
+                                                <option value="#">Dolor sit amet</option>
+                                                <option value="#">Consecteur adipising</option>
+                                            </select>
+                                        </div>
+                                        <div class="b-info-panel__item">
+                                            <label class="b-label_default">FROM</label>
+                                            <div class="clear"></div>
+                                            <div class="example-container">
+                                                <input type="text" class="b-input_text_date-time_in-panels" id="date-time_from" value=""
+                                                       placeholder="00/00/0000 00:00"/>
+                                                <pre style="display:none;">
+var myControl=  {
+	create: function(tp_inst, obj, unit, val, min, max, step){
+		$('&lt;input class="ui-timepicker-input" value="'+val+'" style="width:50%"&gt;')
+			.appendTo(obj)
+			.spinner({
+				min: min,
+				max: max,
+				step: step,
+				change: function(e,ui){ // key events
+						// don't call if api was used and not key press
+						if(e.originalEvent !== undefined)
+							tp_inst._onTimeChange();
+						tp_inst._onSelectHandler();
+					},
+				spin: function(e,ui){ // spin events
+						tp_inst.control.value(tp_inst, obj, unit, ui.value);
+						tp_inst._onTimeChange();
+						tp_inst._onSelectHandler();
+					}
+			});
+		return obj;
+	},
+	options: function(tp_inst, obj, unit, opts, val){
+		if(typeof(opts) == 'string' && val !== undefined)
+				return obj.find('.ui-timepicker-input').spinner(opts, val);
+		return obj.find('.ui-timepicker-input').spinner(opts);
+	},
+	value: function(tp_inst, obj, unit, val){
+		if(val !== undefined)
+			return obj.find('.ui-timepicker-input').spinner('value', val);
+		return obj.find('.ui-timepicker-input').spinner('value');
+	}
+};
+
+$('#date-time_from').datetimepicker({
+	controlType: myControl
+});
+                                                </pre>
+                                            </div>
+                                        </div>
+                                        <div class="b-info-panel__item">
+                                            <label class="b-label_default">TO</label>
+                                            <div class="clear"></div>
+                                            <div class="example-container">
+                                                <input type="text" class="b-input_text_date-time_in-panels" id="date-time_to" value=""
+                                                       placeholder="00/00/0000 00:00"/>
+                                                <pre style="display:none;">
+var myControl=  {
+	create: function(tp_inst, obj, unit, val, min, max, step){
+		$('&lt;input class="ui-timepicker-input" value="'+val+'" style="width:50%"&gt;')
+			.appendTo(obj)
+			.spinner({
+				min: min,
+				max: max,
+				step: step,
+				change: function(e,ui){ // key events
+						// don't call if api was used and not key press
+						if(e.originalEvent !== undefined)
+							tp_inst._onTimeChange();
+						tp_inst._onSelectHandler();
+					},
+				spin: function(e,ui){ // spin events
+						tp_inst.control.value(tp_inst, obj, unit, ui.value);
+						tp_inst._onTimeChange();
+						tp_inst._onSelectHandler();
+					}
+			});
+		return obj;
+	},
+	options: function(tp_inst, obj, unit, opts, val){
+		if(typeof(opts) == 'string' && val !== undefined)
+				return obj.find('.ui-timepicker-input').spinner(opts, val);
+		return obj.find('.ui-timepicker-input').spinner(opts);
+	},
+	value: function(tp_inst, obj, unit, val){
+		if(val !== undefined)
+			return obj.find('.ui-timepicker-input').spinner('value', val);
+		return obj.find('.ui-timepicker-input').spinner('value');
+	}
+};
+
+$('#date-time_to').datetimepicker({
+	controlType: myControl
+});
+                                                </pre>
+                                            </div>
+                                        </div>
+                                        <div class="b-info-panel__item">
+                                            <div class="button-set">
+                                                <input type="button" class="b-pin_search" title="Search">
+                                            </div>
+                                        </div>
+                                        <div class="b-info-panel__item">
+                                            <div class="button-set">
+                                                <input type="reset" class="b-pin_clear" value="" title="Clear">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </form>
+                        <div class="h-cp-stat">
+                            <div class="b-divider_content"></div>
+                            <div id="content_2" class="b-scroll-panel_cp-stat">
+                                <div class="gr_t">
+                                    <div class="gr_t_title">
+                                        <div style="width:40px; text-align:center;">ID</div>
+                                        <div style="width:550px;">Category</div>
+                                        <div style="width:170px;">Content Type</div>
+                                        <div style="width:142px; text-align:center;">Content Amount</div>
+                                        <div style="width:30px; text-align:center;"></div>
+                                    </div>
+                                    <div class="gr_table">
+                                        <div class="gr_table_title">
+                                            <div style="width:40px; text-align:center;">1</div>
+                                            <div style="width:550px;">NEWS</div>
+                                            <div style="width:170px; height:10px; display:block;"> </div>
+                                            <div style="width:142px; text-align:center;">999 999</div>
+                                            <div style="width:30px; float:right; text-align:center;"><a href="javascript:void(0)"><span class="gr_arrow"></span></a></div>
+                                        </div>
+                                        <div class="gr_table_content" style="display:none;">
+                                            <div class="gr_table_content_in">
+                                                <div style="width:40px; text-align:center;">1</div>
+                                                <div style="width:550px;">Local</div>
+                                                <div style="width:170px;">Image</div>
+                                                <div style="width:142px; text-align:center;">999 999</div>
+                                                <div style="width:30px; text-align:center;"></div>
+                                            </div>
+                                            <div class="gr_table_content_in">
+                                                <div style="width:40px; text-align:center;">2</div>
+                                                <div style="width:550px;">Local</div>
+                                                <div style="width:170px;">Image</div>
+                                                <div style="width:142px; text-align:center;">999 999</div>
+                                                <div style="width:30px; text-align:center;"></div>
+                                            </div>
+                                            <div class="gr_table_content_in">
+                                                <div style="width:40px; text-align:center;">3</div>
+                                                <div style="width:550px;">Local</div>
+                                                <div style="width:170px;">Image</div>
+                                                <div style="width:142px; text-align:center;">999 999</div>
+                                                <div style="width:30px; text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gr_table">
+                                        <div class="gr_table_title">
+                                            <div style="width:40px; text-align:center;">1</div>
+                                            <div style="width:550px;">NEWS</div>
+                                            <div style="width:170px; height:10px; display:block;"> </div>
+                                            <div style="width:142px; text-align:center;">999 999</div>
+                                            <div style="width:30px; float:right; text-align:center;"><a href="javascript:void(0)"><span class="gr_arrow"></span></a></div>
+                                        </div>
+                                        <div class="gr_table_content" style="display:none;">
+                                            <div class="gr_table_content_in">
+                                                <div style="width:40px; text-align:center;">1</div>
+                                                <div style="width:550px;">Local</div>
+                                                <div style="width:170px;">Image</div>
+                                                <div style="width:142px; text-align:center;">999 999</div>
+                                                <div style="width:30px; text-align:center;"></div>
+                                            </div>
+                                            <div class="gr_table_content_in">
+                                                <div style="width:40px; text-align:center;">2</div>
+                                                <div style="width:550px;">Local</div>
+                                                <div style="width:170px;">Image</div>
+                                                <div style="width:142px; text-align:center;">999 999</div>
+                                                <div style="width:30px; text-align:center;"></div>
+                                            </div>
+                                            <div class="gr_table_content_in">
+                                                <div style="width:40px; text-align:center;">3</div>
+                                                <div style="width:550px;">Local</div>
+                                                <div style="width:170px;">Image</div>
+                                                <div style="width:142px; text-align:center;">999 999</div>
+                                                <div style="width:30px; text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="gr_table">
+                                        <div class="gr_table_title">
+                                            <div style="width:40px; text-align:center;">1</div>
+                                            <div style="width:550px;">NEWS</div>
+                                            <div style="width:170px; height:10px; display:block;"> </div>
+                                            <div style="width:142px; text-align:center;">999 999</div>
+                                            <div style="width:30px; float:right; text-align:center;"><a href="javascript:void(0)"><span class="gr_arrow"></span></a></div>
+                                        </div>
+                                        <div class="gr_table_content" style="display:none;">
+                                            <div class="gr_table_content_in">
+                                                <div style="width:40px; text-align:center;">1</div>
+                                                <div style="width:550px;">Local</div>
+                                                <div style="width:170px;">Image</div>
+                                                <div style="width:142px; text-align:center;">999 999</div>
+                                                <div style="width:30px; text-align:center;"></div>
+                                            </div>
+                                            <div class="gr_table_content_in">
+                                                <div style="width:40px; text-align:center;">2</div>
+                                                <div style="width:550px;">Local</div>
+                                                <div style="width:170px;">Image</div>
+                                                <div style="width:142px; text-align:center;">999 999</div>
+                                                <div style="width:30px; text-align:center;"></div>
+                                            </div>
+                                            <div class="gr_table_content_in">
+                                                <div style="width:40px; text-align:center;">3</div>
+                                                <div style="width:550px;">Local</div>
+                                                <div style="width:170px;">Image</div>
+                                                <div style="width:142px; text-align:center;">999 999</div>
+                                                <div style="width:30px; text-align:center;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="b-divider_content i-margin_bottom"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="l-footer">
+        <div class="clear"></div>
+        <div class="b-footer">
+            <div class="b-footer__index">
+                <div class="item"><a href="#" title="Help">Help</a></div>
+                <div class="item"><a href="#" title="Terms of use">Terms of use</a></div>
+            </div>
+            <div class="b-copy">© Copyright. The service licensed</div>
+        </div>
+    </div>
+</body>
+</html>

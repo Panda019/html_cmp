@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>web_temp_cmp-co-addcont</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/jqtransform.css" media="all"/>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/jquery.jqtransform.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('form').jqTransform({imgPath: 'images/interface/'});
+        });
+    </script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script>
+        (function($) {
+            $(window).load(function() {
+                $("#content_1").mCustomScrollbar({
+                    scrollButtons: {
+                        enable: true
+                    }
+                });
+                $("#content_1").hover(function() {
+                    $(document).data({"keyboard-input": "enabled"});
+                    $(this).addClass("keyboard-input");
+                }, function() {
+                    $(document).data({"keyboard-input": "disabled"});
+                    $(this).removeClass("keyboard-input");
+                });
+                $(document).keydown(function(e) {
+                    if ($(this).data("keyboard-input") === "enabled") {
+                        var activeElem = $(".keyboard-input"),
+                                activeElemPos = Math.abs($(".keyboard-input .mCSB_container").position().top),
+                                pixelsToScroll = 60;
+                        if (e.which === 38) { //scroll up
+                            e.preventDefault();
+                            if (pixelsToScroll > activeElemPos) {
+                                activeElem.mCustomScrollbar("scrollTo", "top");
+                            } else {
+                                activeElem.mCustomScrollbar("scrollTo", (activeElemPos - pixelsToScroll), {scrollInertia: 400, scrollEasing: "easeOutCirc"});
+                            }
+                        } else if (e.which === 40) { //scroll down
+                            e.preventDefault();
+                            activeElem.mCustomScrollbar("scrollTo", (activeElemPos + pixelsToScroll), {scrollInertia: 400, scrollEasing: "easeOutCirc"});
+                        }
+                    }
+                });
+            });
+        })(jQuery);
+    </script>
+</head>
+<body>
+    <div class="l-page__wrapper">
+        <div class="l-page-wrap">
+            <div class="l-header__wrap">
+                <div class="b-sidebar_top">
+                    <div class="b-nav-system_top">
+                        <ul class="list">
+                            <li class="item"><span class="active" title="Content Manajement">Content Manajement</span></li>
+                        </ul>
+                    </div>
+                    <div class="l-input_logout_header"><a href="#" class="b-input-logout" title="Logout">Logout</a></div>
+                    <div class="b-divider__sidebar_top"></div>
+                    <div class="b-choice_lang">
+                        <div class="b-sort_tools">
+                            <ul class="list">
+                                <li><a class="fly" href="#" tabindex="1" title="Choice language">RUS</a>
+                                    <ul class="dropdown d2">
+                                        <li class="lang"><a href="#">ENG</a></li>
+                                        <li class="lang"><a href="#">UZB</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="b-divider__sidebar_top"></div>
+                    <div class="b-sort_user-status">
+                        <ul class="list">
+                            <li title="Select options"><a class="fly" href="#" tabindex="1">
+                                    <div class="default">Name Surname</div>
+                                </a>
+                                <ul class="dropdown d2">
+                                    <li class="lang"><a href="#">Administrator</a></li>
+                                    <li class="lang"><a href="#">Change Password</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="b-system-time">System Time: 13-01-2013 14:23:01</div>
+                </div>
+                <div class="clear"></div>
+                <div class="b-header__index">
+                    <div class="b-name_service">
+                        <div class="index">Content Management</div>
+                        <div class="b-type_service">Platform</div>
+                    </div>
+                    <div class="b-page-title">Categories</div>
+                </div>
+            </div>
+            <div class="l-content-wrap">
+                <div class="b-content i-width_1100">
+                    <div class="b-sidebar_left">
+                        <div class="b-content__index">
+                            <div class="b-page-header"> Categories list </div>
+                            <div class="b-divider_content"></div>
+                            <div class="b-categories__list">
+                                <div id="content_1" class="b-scroll-panel_categories-list">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor massa, fermentum ac rhoncus sed, euismod id sapien. Fusce varius tortor sit amet metus sollicitudin feugiat. Integer imperdiet dui elementum quam posuere in porta turpis euismod. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent at tortor eu massa sollicitudin consectetur at in nisi. Nam at diam eget est pretium ullamcorper quis id erat. Nam quis ante at eros auctor euismod vitae ut massa. Suspendisse nisi turpis, molestie non venenatis vel, suscipit sed lectus. Fusce id sodales lorem. Sed venenatis, urna id laoreet porttitor, sem nisi dictum magna, id cursus nibh ligula vel quam. Curabitur quis mauris magna. Nulla diam justo, mattis non facilisis et, viverra in nunc.
+
+                                        Integer lacus nunc, luctus in mattis eu, convallis at ante. Aenean cursus faucibus mollis. Proin cursus scelerisque risus et faucibus. Aliquam vitae lacus est, non pretium est. Sed luctus ipsum quis ante placerat non fermentum odio rhoncus. Nullam pulvinar euismod lectus, volutpat adipiscing nibh hendrerit eu. Pellentesque volutpat semper ipsum eget sagittis. Quisque dapibus pellentesque eros a eleifend. Proin dui nulla, malesuada porttitor suscipit quis, venenatis nec mauris. Vivamus pellentesque, lacus ut mollis ornare, est ligula mattis felis, et pellentesque massa felis at ligula. Sed interdum, tortor a posuere condimentum, sapien arcu facilisis neque, nec consectetur diam erat id dolor. Curabitur lobortis sagittis odio, sit amet aliquam orci consequat vitae. Vivamus non lectus dictum elit bibendum ullamcorper. Vestibulum quis lorem velit, vel accumsan mauris. </p>
+                                </div>
+                            </div>
+                            <div class="b-divider_content"></div>
+                        </div>
+                    </div>
+                    <div class="b-content_2col i-height_categories">
+                        <div class="b-page-header">
+                            <div class="b-page-header__index">Company Name</div>
+                            <div class="b-page-header__breacrumbs">
+                                <div class="b-breadcrumbs">
+                                    <div class="b-breadcrumbs__bullet"></div>
+                                    <div class="b-breadcrumbs__item"><a href="#">Folder Name</a></div>
+                                    <div class="b-breadcrumbs__bullet"></div>
+                                    <div class="b-breadcrumbs__item"><a href="#">Folder Name</a></div>
+                                    <div class="b-breadcrumbs__bullet"></div>
+                                    <div class="b-breadcrumbs__item">End point</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="b-divider_content i-indented"></div>
+                        <form>
+                            <div class="b-form-wrap">
+                                <div class="b-form-column i-height-form_default i-no-background">
+                                    <label class="b-label_default">ALLOWED EXTENSIONS</label>
+                                    <div class="clear"></div>
+                                    <div class="b-info-panel__item">
+                                        <select name="select1">
+                                            <option value="#">Text</option>
+                                            <option value="#">Lorem ipsum dolor</option>
+                                            <option value="#">Sit amet, consectetur</option>
+                                            <option value="#">Adipiscing elit</option>
+                                            <option value="#">Donec dignissim pharetra </option>
+                                            <option value="#">At ullamcorper tortor </option>
+                                            <option value="#">Sed vel iaculis nisl</option>
+                                            <option value="#">Ut gravida, purus in </option>
+                                            <option value="#">Eros ipsum ornare quam</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="b-divider_content i-indented"></div>
+                            <div class="b-action-panel">
+                                <div class="b-form_tools__item_groups">
+                                    <input class="b-pin_cancel" type="button" value="CANCEL" title="Cancel">
+                                </div>
+                                <div class="b-form_tools__item_groups">
+                                    <input class="b-pin_save" type="button" value="CONTINUE" title="Update">
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="l-footer">
+        <div class="clear"></div>
+        <div class="b-footer">
+            <div class="b-footer__index">
+                <div class="item"><a href="#" title="Help">Help</a></div>
+                <div class="item"><a href="#" title="Terms of use">Terms of use</a></div>
+            </div>
+            <div class="b-copy">© Copyright. The service licensed</div>
+        </div>
+    </div>
+</body>
+</html>

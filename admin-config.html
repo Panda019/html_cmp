@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>web_temp_cmp-admin-config</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link href="css/jquery.mCustomScrollbar.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/jqtransform.css" media="all"/>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/jquery.jqtransform.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('form').jqTransform({imgPath: 'images/interface/'});
+        });
+    </script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script>
+        (function($) {
+            $(window).load(function() {
+                $("#content_1").mCustomScrollbar({
+                    scrollButtons: {
+                        enable: true
+                    }
+                });
+                $("#content_1").hover(function() {
+                    $(document).data({"keyboard-input": "enabled"});
+                    $(this).addClass("keyboard-input");
+                }, function() {
+                    $(document).data({"keyboard-input": "disabled"});
+                    $(this).removeClass("keyboard-input");
+                });
+                $(document).keydown(function(e) {
+                    if ($(this).data("keyboard-input") === "enabled") {
+                        var activeElem = $(".keyboard-input"),
+                                activeElemPos = Math.abs($(".keyboard-input .mCSB_container").position().top),
+                                pixelsToScroll = 60;
+                        if (e.which === 38) { //scroll up
+                            e.preventDefault();
+                            if (pixelsToScroll > activeElemPos) {
+                                activeElem.mCustomScrollbar("scrollTo", "top");
+                            } else {
+                                activeElem.mCustomScrollbar("scrollTo", (activeElemPos - pixelsToScroll), {scrollInertia: 400, scrollEasing: "easeOutCirc"});
+                            }
+                        } else if (e.which === 40) { //scroll down
+                            e.preventDefault();
+                            activeElem.mCustomScrollbar("scrollTo", (activeElemPos + pixelsToScroll), {scrollInertia: 400, scrollEasing: "easeOutCirc"});
+                        }
+                    }
+                });
+            });
+        })(jQuery);
+    </script>
+    <script>
+        (function($) {
+            $(window).load(function() {
+                $("#content_2").mCustomScrollbar({
+                    scrollButtons: {
+                        enable: true
+                    }
+                });
+                $("#content_2").hover(function() {
+                    $(document).data({"keyboard-input": "enabled"});
+                    $(this).addClass("keyboard-input");
+                }, function() {
+                    $(document).data({"keyboard-input": "disabled"});
+                    $(this).removeClass("keyboard-input");
+                });
+                $(document).keydown(function(e) {
+                    if ($(this).data("keyboard-input") === "enabled") {
+                        var activeElem = $(".keyboard-input"),
+                                activeElemPos = Math.abs($(".keyboard-input .mCSB_container").position().top),
+                                pixelsToScroll = 60;
+                        if (e.which === 38) { //scroll up
+                            e.preventDefault();
+                            if (pixelsToScroll > activeElemPos) {
+                                activeElem.mCustomScrollbar("scrollTo", "top");
+                            } else {
+                                activeElem.mCustomScrollbar("scrollTo", (activeElemPos - pixelsToScroll), {scrollInertia: 400, scrollEasing: "easeOutCirc"});
+                            }
+                        } else if (e.which === 40) { //scroll down
+                            e.preventDefault();
+                            activeElem.mCustomScrollbar("scrollTo", (activeElemPos + pixelsToScroll), {scrollInertia: 400, scrollEasing: "easeOutCirc"});
+                        }
+                    }
+                });
+            });
+        })(jQuery);
+    </script>
+</head>
+<body>
+    <div class="l-page__wrapper">
+        <div class="l-page-wrap">
+            <div class="l-header__wrap">
+                <div class="b-sidebar_top">
+                    <div class="b-nav-system_top">
+                        <ul class="list">
+                            <li class="item"><a href="#" title="Content Providers">Content Providers</a></li>
+                            <li class="item"><a href="#" title="Categories">Categories</a></li>
+                            <li class="item"><span class="active" title="Configuration">Configuration</span></li>
+                        </ul>
+                    </div>
+                    <div class="l-input_logout_header"><a href="#" class="b-input-logout" title="Logout">Logout</a></div>
+                    <div class="b-divider__sidebar_top"></div>
+                    <div class="b-choice_lang">
+                        <div class="b-sort_tools">
+                            <ul class="list">
+                                <li><a class="fly" href="#" tabindex="1" title="Choice language">RUS</a>
+                                    <ul class="dropdown d2">
+                                        <li class="lang"><a href="#">ENG</a></li>
+                                        <li class="lang"><a href="#">UZB</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="b-divider__sidebar_top"></div>
+                    <div class="b-sort_user-status">
+                        <ul class="list">
+                            <li title="Select options"><a class="fly" href="#" tabindex="1">
+                                    <div class="default">Name Surname</div>
+                                </a>
+                                <ul class="dropdown d2">
+                                    <li class="lang"><a href="#">Administrator</a></li>
+                                    <li class="lang"><a href="#">Change Password</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="b-system-time">System Time: 13-01-2013 14:23:01</div>
+                </div>
+                <div class="clear"></div>
+                <div class="b-header__index">
+                    <div class="b-name_service">
+                        <div class="index">Content Management</div>
+                        <div class="b-type_service">Platform</div>
+                    </div>
+                    <div class="b-page-title">Configuration</div>
+                </div>
+            </div>
+            <div class="l-content-wrap">
+                <div class="b-content i-width_1200">
+                    <div class="b-content_1col i-height_configuration">
+                        <div class="b-page-header">Company Name</div>
+                        <div class="b-divider_content i-indented"></div>
+                        <form>
+                            <div class="b-form-wrap">
+                                <div class="b-form-column i-height-form_multirow">
+                                    <div class="b-form-column__title">Maintenance mode</div>
+                                    <div class="b-form-row">
+                                        <div class="b-form-row__item">
+                                            <input type="radio" name="#">
+                                            <label class="b-form-label">Yes</label>
+                                        </div>
+                                        <div class="b-form-row__item">
+                                            <input type="radio" name="#">
+                                            <label class="b-form-label">No</label>
+                                        </div>
+                                        <div class="b-form-row__item"><span>MAINTENANCE MODE</span></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="b-form-input-textarea__row">
+                                        <label class="b-label_default">MAINTENANCE MODE DESCRIPTION <span>(160 chars. left)</span> </label>
+                                        <div class="clear"></div>
+                                        <textarea name="" class="b-input_textarea i-width_maintenance-mode i-height_description i-border_alert" placeholder="Maintenance mode description"></textarea>
+                                    </div>
+                                    <div class="b-form-column__title">Content configuration</div>
+                                    <div class="b-form-input-row">
+                                        <label class="b-label_default">ALLOWED EXTENSIONS</label>
+                                        <div class="clear"></div>
+                                        <input class="b-input_text i-width_maintenance-mode" type="text" placeholder="Allowed extensions"/>
+                                    </div>
+                                    <div class="b-form-input-row">
+                                        <div class="b-form-row__item_input">
+                                            <label class="b-label_default">PICTURE SIZE <span>(KB)</span></label>
+                                            <div class="clear"></div>
+                                            <input class="b-input_text i-width__description_short" type="text" placeholder="0"/>
+                                        </div>
+                                        <div class="b-form-row__item_input_last">
+                                            <label class="b-label_default">AUDIO FILE SIZE <span>(KB)</span></label>
+                                            <div class="clear"></div>
+                                            <input class="b-input_text i-width__description_short" type="text" placeholder="0"/>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="b-form-input-row">
+                                        <div class="b-form-row__item_input">
+                                            <label class="b-label_default">PICTURE SIZE <span>(KB)</span></label>
+                                            <div class="clear"></div>
+                                            <input class="b-input_text i-width__description_short" type="text" placeholder="0"/>
+                                        </div>
+                                        <div class="b-form-row__item_input_last">
+                                            <label class="b-label_default">AUDIO FILE SIZE <span>(KB)</span></label>
+                                            <div class="clear"></div>
+                                            <input class="b-input_text i-width__description_short" type="text" placeholder="0"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b-form-column i-height-form_multirow">
+                                    <div class="b-form-column__title">Mail configuration</div>
+                                    <div class="b-form-input-row">
+                                        <label class="b-label_default">MAIL SERVER</label>
+                                        <div class="clear"></div>
+                                        <input class="b-input_text i-width_mail-configuration" type="text" placeholder="Mail server"/>
+                                    </div>
+                                    <div class="b-form-input-row">
+                                        <label class="b-label_default">MAIL PASSWORD</label>
+                                        <div class="clear"></div>
+                                        <input class="b-input_text i-width_mail-configuration" type="password"/>
+                                    </div>
+                                    <div class="b-form-input-row">
+                                        <label class="b-label_default">MAIL USER</label>
+                                        <div class="clear"></div>
+                                        <input class="b-input_text i-width_mail-configuration" type="text" placeholder="Mail user"/>
+                                    </div>
+                                    <div class="b-form-input-row">
+                                        <label class="b-label_default">MAIL FROM</label>
+                                        <div class="clear"></div>
+                                        <input class="b-input_text i-width_mail-configuration" type="text" placeholder="Mail from"/>
+                                    </div>
+                                </div>
+                                <div class="b-form-column i-height-form_multirow">
+                                    <div class="b-form-column__title_two-rows"><span>Languages configuration</span>
+                                        <div class="info">(changes in this section doesn't requer save)</div>
+                                    </div>
+                                    <div class="b-form-input-row">
+                                        <div class="b-form-input-row__item">
+                                            <label class="b-label_default">LANGUAGE NAME</label>
+                                            <div class="clear"></div>
+                                            <input class="b-input_text i-width_language" type="text" placeholder="Language name"/>
+                                        </div>
+                                        <div class="b-form-input-row__item_last">
+                                            <div class="b-button-set">
+                                                <input class="b-pin_add" type="button" value="ADD NEW" title="Add new">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="b-form-input-row_scroll-incl">
+                                        <label class="b-label_default">LANGUAGE LIST</label>
+                                        <div class="clear"></div>
+                                        <div class="b-scroll_options-list">
+                                            <div id="content_1" class="b-scroll-panel_options-list">
+                                                <table border="0" cellpadding="0" cellspacing="0" class="list">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="83%">Language #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">Language #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">Language #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">Language #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">Language #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">Language #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">Language #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">Language #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">Language #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">Language #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">Language #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">Language #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b-form-column_last i-height-form_multirow">
+                                    <div class="b-form-column__title_two-rows"><span>Languages configuration</span>
+                                        <div class="info">(changes in this section doesn't requer save)</div>
+                                    </div>
+                                    <div class="b-form-input-row">
+                                        <div class="b-form-input-row__item">
+                                            <label class="b-label_default">CURRENCY CODE</label>
+                                            <div class="clear"></div>
+                                            <input class="b-input_text i-width_language" type="text" placeholder="Currency code"/>
+                                        </div>
+                                        <div class="b-form-input-row__item_last">
+                                            <div class="b-button-set">
+                                                <input class="b-pin_add" type="button" value="ADD NEW" title="Add new">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="b-form-input-row_scroll-incl">
+                                        <label class="b-label_default">CURRENCY LIST</label>
+                                        <div class="clear"></div>
+                                        <div class="b-scroll_options-list">
+                                            <div id="content_2" class="b-scroll-panel_options-list">
+                                                <table border="0" cellpadding="0" cellspacing="0" class="list">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td width="83%">CRN #</td>
+                                                            <td width="17%"><div class="actions-set"><a href="#" title="Delete"><img src="images/icons/icon-delete.png" width="24"
+                                                                                                                                     height="24"></a></div></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="b-divider_content i-indented"></div>
+                            <div class="b-action-panel">
+                                <div class="b-form_tools__item_groups">
+                                    <input class="b-pin_cancel" type="button" value="CANCEL" title="Cancel">
+                                </div>
+                                <div class="b-form_tools__item_groups">
+                                    <input class="b-pin_save" type="button" value="UPDATE" title="Update">
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="l-footer">
+        <div class="clear"></div>
+        <div class="b-footer">
+            <div class="b-footer__index">
+                <div class="item"><a href="#" title="Help">Help</a></div>
+                <div class="item"><a href="#" title="Terms of use">Terms of use</a></div>
+            </div>
+            <div class="b-copy">© Copyright. The service licensed</div>
+        </div>
+    </div>
+</body>
+</html>

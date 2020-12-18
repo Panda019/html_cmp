@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Modal windows</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jqtransform.css" media="all"/>
+    <script src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/jquery.jqtransform.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('form').jqTransform({imgPath: 'images/interface/'});
+        });
+    </script>
+</head>
+<body>
+    <!--MODAL WINDOW-->
+    <div class="b-window_modal">
+        <div class="b-title">ADD CATEGORY</div>
+        <div class="b-pin_close"></div>
+        <div class="b-window_modal__index">
+            <form>
+                <label class="b-label_default">CATEGORY NAME</label>
+                <div class="clear"></div>
+                <input class="b-input_text i-width_add-category" type="text"/>
+                <div class="b-window_modal__row">
+                    <label class="b-label_default">TYPE</label>
+                    <div class="clear"></div>
+                    <div class="b-form-row__item">
+                        <input type="radio" name="#">
+                        <label class="b-form-label">Folder</label>
+                    </div>
+                    <div class="b-form-row__item">
+                        <input type="radio" name="#">
+                        <label class="b-form-label">End point</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="clear"></div>
+        <div class="b-window_modal__tools-block">
+            <div class="b-window_modal__tools-block__item">
+                <input class="b-pin_save_in_modal-window" type="button" title="Create" value="CREATE">
+            </div>
+            <div class="b-window_modal__tools-block__item">
+                <input class="b-pin_cancel_in_modal-window" type="button" title="Cancel" value="CANCEL">
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!--END OF MODAL WINDOW-->
+
+</body>
+</html>

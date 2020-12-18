@@ -1,0 +1,52 @@
+@charset "windows-1251";
+/* CSS Document */
+
+/*Фон слайдера*/
+.slider {
+width:290px;
+height:7px;
+display: block;
+position:relative;
+margin:0;
+padding-right:9px;
+border:solid 1px #b6b6b6;
+border-radius:4px;
+-moz-border-radius:4px;
+-webkit-border-radius:4px;
+}
+
+/*Стиль кнопки слайдера*/
+.ui-slider-handle {
+width:18px;
+height:18px;
+display: block;
+position:relative;
+z-index:200;
+top: -9px;
+background:#bbbbbb;
+-webkit-border-radius:4px;
+-moz-border-radius:4px;
+border-radius:4px;
+}
+
+/*Элемент div результата, в котором выводится значение слайдера*/
+.slider-result_content
+{
+	font-size:12px;
+	color:#666066;
+	margin-bottom:10px;
+}
+.slider-result {
+}
+
+/*Полоска заполнителя слайдера*/
+.ui-widget-header {
+height:4px;
+top:1px;
+position:relative;
+}
+
+a {
+outline:none;
+-moz-outline-style:none;
+}

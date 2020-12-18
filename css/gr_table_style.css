@@ -1,0 +1,86 @@
+@charset "windows-1251";
+/* CSS Document */
+
+
+
+
+
+.gr_t
+{
+	width:100%;
+}
+
+	.gr_t_title
+	{
+		width:100%;
+		height:21px;
+		padding-top:4px;
+		font-size:14px;
+		color:#f3f3f3;
+		background-color:#666066;
+	}
+	
+	.gr_t div
+	{
+		display:table;
+		float:left;
+	}
+
+
+.gr_table
+{
+	width:100%;
+	display:table;
+	font-size:14px;	
+}
+	.gr_table_title
+	{
+		width:100%;
+		height:26px;
+		display:block;
+		background-color:#393639;		
+		color:#ffffff;
+		padding-top:10px;
+	}
+	.gr_table div
+	{
+		display:block;
+		float:left;
+	}
+	.gr_table_content
+	{
+		width:100%;
+		display:table;
+		color:#393639;
+		float:none;
+		background-color:#FFF;
+	}
+
+		.gr_table_content_in
+		{
+			width:100%;
+			display:table;
+			height:20px;
+			display:block;
+			overflow:hidden;
+			border-bottom:dotted 2px #d9d9d9;
+			padding-top:4px;
+			float:none;
+		}
+
+
+		.gr_table_content_in:hover
+		{
+			background-color: rgb(243,243,243);
+		}
+
+
+		.gr_arrow
+		{
+			width:14px;
+			height:14px;
+			display:block;
+			background-image:url(../images/icons/gr_arrow.png);
+			background-position:top;
+			background-repeat:no-repeat;
+		}
